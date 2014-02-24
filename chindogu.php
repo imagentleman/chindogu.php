@@ -6,19 +6,19 @@ global $cfg;
 global $db;
 
 class Controller {
-	static function model($name) {
-		require_once 'models/'.$name.'.php';
-		$model = new $name;
-		return $model;
-	}
+    static function model($name) {
+        require_once 'models/'.$name.'.php';
+        $model = new $name;
+        return $model;
+    }
 
-	static function view($name, $params = array()) {
-		$template = 'views/'. $name .'.php';
+    static function view($name, $params = array()) {
+        $template = 'views/'. $name .'.php';
         extract($params);
         ob_start();
         include_once $template;
         return ob_get_clean();
-	}
+    }
 }
 
 class Model {
