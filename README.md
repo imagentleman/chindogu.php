@@ -6,7 +6,25 @@ A one file mvc PHP micro framework.
 What is it?
 -----------
 
-Chindogu is basically [Codeigniter](https://github.com/EllisLab/CodeIgniter) in one file of 50 lines.
+Chindogu is basically [Codeigniter](https://github.com/EllisLab/CodeIgniter) in one file of 50 lines. But much faster.
+
+Fast, how fast?
+-----------
+
+Very. It's so lightweight, that is probably the fastest MVC PHP Framework.
+
+## Benchmarks
+
+Running [Phalcon's](https://github.com/phalcon/framework-bench) benchmark suite with AB (Apache Bench), chindogu.php scores the highest in the hello world test.
+
+1. chindogu.php: 1345.88 #Requests/sec (mean)
+2. phalcon 1.3.3: 1327.99 #Requests/sec (mean)
+3. yii 1.1.13: 530.82 #Requests/sec (mean)
+4. codeigniter 2.1: 343.1 #Requests/sec (mean)
+5. kohanna 3.2: 271.60 #Requests/sec (mean)
+
+How does it work?
+-----------
 
 ## File Structure
 
