@@ -44,7 +44,7 @@ Routes match one to one to controllers and actions.
 In this url:
 
     http://example.com/watch/video/id
-    
+
 `watch` is the controller, `video` is the action and `id` is a parameter for the action (you can have multiple parameters like `http://example.com/watch/video/id/param2/param3`).
 
 ## Controllers
@@ -58,15 +58,15 @@ For the previous examples, we would have a `/controllers/watch.php` file like th
         // some php code
       }
     }
-    
+
 or like this:
-    
+
     Class Watch extends Controller {
       static function video($id, $param2, $param3) {
         // some php code
       }
     }
-    
+
 The route, file name and class name must be the same (in this case `watch`).
 
 ## Views
@@ -75,21 +75,21 @@ Views are just php files with embedded html.
 
 You could have a view located in `/views/hello_view.php` with something like this:
 
-    <p><?= 'hello world';></p>
-    
+    <p>Hello World</p>
+
 And you would use it from a controller like this:
 
     Class Watch extends Controller {
       static function video($id) {
-        echo Watch::view('hello_view'); 
+        echo Watch::view('hello_view');
         // echo Controller::view('hello_view') you can also use the parent controller class
       }
     }
-    
+
 You can send variables to the view, so a view like this:
 
     <p><?= "The video is $video_id";></p>
-    
+
 Would be called from the controller like this:
 
     Class Watch extends Controller {
@@ -97,7 +97,7 @@ Would be called from the controller like this:
         echo Watch::view('hello_view', array('$video_id' => $id));
       }
     }
-    
+
 ## Models
 
 Models use PDO with parametrized sql (parameters are optional). Only one function is available, named 'exec'.
@@ -112,14 +112,14 @@ A model in `/models/Watch_Model.php` would look like this:
     	  return $this->exec('SELECT * FROM videos WHERE id = :video_id', array(':video_id' => $id));
     	}
     }
-    
+
 And would be called from a controller like this:
 
     Class Watch extends Controller {
       static function video($id) {
         $watch_model = Watch::model('Watch_Model'); // you can also use Controller instead of Watch
         $video = $watch_model->get_video($id);
-        echo Watch::view('hello_view', array('video' => $video)); 
+        echo Watch::view('hello_view', array('video' => $video));
       }
     }
 
@@ -140,4 +140,4 @@ Redirects every request to index.php (except for files, like your css or js) and
 Acknowledgements
 ----------------
 
-This is heavily inspired by [PIP](https://github.com/gilbitron/PIP).
+This is heavily inspired by [CodeIgniter](https://github.com/bcit-ci/CodeIgniter) and [PIP](https://github.com/gilbitron/PIP).
