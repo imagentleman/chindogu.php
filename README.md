@@ -1,7 +1,7 @@
 chindogu.php
 ============
 
-A one file mvc PHP micro framework.
+A one file high performance MVC PHP micro framework.
 
 What is it?
 -----------
@@ -22,6 +22,13 @@ Running [Phalcon's](https://github.com/phalcon/framework-bench) benchmark suite 
 3. yii 1.1.13: 530.82 #Requests/sec (mean)
 4. codeigniter 2.1: 343.1 #Requests/sec (mean)
 5. kohanna 3.2: 271.60 #Requests/sec (mean)
+
+Installation
+-----------
+
+1. Download the latest version from [here](https://github.com/imagentleman/chindogu.php/releases/download/1/chindogu.php-master.zip).
+2. Unzip and copy the files of the folder.
+3. Paste them on Htdocs (for Apache) or your server's folder.
 
 How does it work?
 -----------
